@@ -1,7 +1,8 @@
 # Report card — tool use, thinking on vs off: Qwen3.8-Flash-Next iq4r on radiance (2× R9700) vs NVFP4 on vLLM (GB10), Qwen3.8-27B as control
 
-> **QualityBench BFCL** — 400 function-calling items in 4 categories (simple, multiple, parallel,
-> parallel-multiple), scored through the server's tool parser; greedy, seed 608, paired item by item.
+> **BFCL v4, non-live subset, via QualityBench** — 400 function-calling items, 100 each from `simple_python`,
+> `multiple`, `parallel` and `parallel_multiple` (no live, irrelevance or multi-turn categories), scored by BFCL's own
+> AST checker through the server's tool parser; greedy, seed 608, paired item by item.
 > — [QualityBench](https://github.com/launch80/QualityBench)
 > **tool-eval-bench `--hardmode`** — 104 scenario-scored multi-turn tool-use scenarios in 16 categories (selection,
 > parameter precision, chains, restraint, error recovery, safety, state, structured output, Hard Mode), each
@@ -38,7 +39,7 @@ Harness: QualityBench **v0.4.0** (`2f4f337`) `--tasks bfcl --concurrency 8`; too
 
 | | 27b off | 27b on | qfn-r9700 off | qfn-r9700 on | qfn-gb10 off | qfn-gb10 on |
 |---|---|---|---|---|---|---|
-| **BFCL** (n 400) | 92.0 [88.9, 94.3] | 91.8 [88.6, 94.1] | **83.0** [79.0, 86.4] | **90.8** [87.5, 93.2] | 87.5 [83.9, 90.4] | 91.2 [88.1, 93.6] |
+| **BFCL v4 non-live** (n 400) | 92.0 [88.9, 94.3] | 91.8 [88.6, 94.1] | **83.0** [79.0, 86.4] | **90.8** [87.5, 93.2] | 87.5 [83.9, 90.4] | 91.2 [88.1, 93.6] |
 | **tool-eval hardmode** | 87 (181/208) | **96** (199/208) | 89 (185/208) | 90 (188/208) | 89 (186/208) | 92 (191/208) |
 | wall, BFCL + tool-eval | 8 min | 12 min | 4 min | 6 min | 16 min | 25 min |
 
