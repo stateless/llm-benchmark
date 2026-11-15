@@ -4,14 +4,10 @@
 >
 > **QualityBench** — a fixed, pinned suite, greedy, seed 608, paired item by item. — [QualityBench](https://github.com/launch80/QualityBench)
 
-**Why this card:** [card 0006](2026-11-15-0006-flash-next-radiance-2.0-vs-1.17-r9700-speed-energy.md) measured the
-speed of the radiance 2.0.0 upgrade. Does the new engine with its new Flash-Next container (IQR-V4) also keep the answers
-the same? This card adds QualityBench, thinking off and on, against [card 0004](2026-11-15-0004-flash-next-r9700-think-vs-nothink-energy-tokens.md)'s
-1.17 run on the same box, with time and wall energy for each.
+**Why this card:** [card 0006](2026-11-15-0006-flash-next-radiance-2.0-vs-1.17-r9700-speed-energy.md) measured the speed of the radiance 2.0.0 upgrade. Does the new engine with its new Flash-Next container (IQR-V4) also keep the answers
+the same? This card adds QualityBench, thinking off and on, against [card 0004](2026-11-15-0004-flash-next-r9700-think-vs-nothink-energy-tokens.md)'s 1.17 run on the same box, with time and wall energy for each.
 
-**What we ran on:** 2× AMD Radeon AI PRO R9700 (gfx1201, 32 GB each, **210 W cap** per card, PCIe 5.0 x8 each,
-peer-to-peer on), Ryzen 9 9950X, 64 GB DDR5-6000, Linux 7.2.6. One arm at a time, alone on the cards; the shared
-gateway's route to the host withdrawn during each run.
+**What we ran on:** 2× AMD Radeon AI PRO R9700 (gfx1201, 32 GB each, **210 W cap** per card, PCIe 5.0 x8 each, peer-to-peer on), Ryzen 9 9950X, 64 GB DDR5-6000, Linux 7.2.6. One arm at a time, alone on the cards; the shared gateway's route to the host withdrawn during each run.
 
 | arm | engine | container | KV | config |
 |---|---|---|---|---|
@@ -28,7 +24,7 @@ gateway's route to the host withdrawn during each run.
 - QualityBench **v0.4.0** (`2f4f337`), `--concurrency 8`, tokenizer `Qwen/Qwen3.8-Flash-Next@812d96e1`; thinking on =
   `--thinking-max-tokens 32768`, `reasoning_effort=medium`. The same tasks, items and flags for both arms.
 
-> ⚠ **Engine AND quant changed together** — this measures the upgrade as shipped, not either part alone.
+> ⚠ **Engine AND quant changed together** — this measures the upgrade as shipped, not either part alone. 
 > Runs a day apart, not interleaved: QualityBench deltas are paired item by item; BetterBench's are not paired in time.
 
 ## Results — quality (QualityBench, paired 2.0 − 1.17)
